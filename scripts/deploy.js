@@ -1,13 +1,12 @@
-
 const hre = require("hardhat");
 
 async function main() {
-  const Chai = await hre.ethers.getContractFactory("chai"); //fetching bytecode and ABI
-  const chai = await Chai.deploy(); //creating an instance of our smart contract
+  const Chai = await hre.ethers.getContractFactory("chai"); // Match the casing exactly as in your contract
+  const chai = await Chai.deploy(); // Creating an instance of our smart contract
 
-  await chai.deployed();//deploying your smart contract
+  await chai.deployed(); // Deploying your smart contract
 
-  console.log("Deployed contract address:",`${chai.address}`);
+  console.log("Deployed contract address:", chai.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
@@ -16,4 +15,3 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
-//0xa64e3144835aF8781c750ceC432784a68d883266
